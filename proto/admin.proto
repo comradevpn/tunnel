@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package proto;
+option go_package = "github.com/vpnhouse/tunnel/proto";
+
+service AdminService {
+  // Event to tackle over the node 
+  rpc Event(EventRequest) returns (EventResponse) {}
+}
+
+message EventRequest {
+  Action action = 1;
+}
+
+message EventResponse {
+}
+
+message Action {
+  AddRestriction add_restriction = 1;
+  DeleteRestriction delete_restriction = 2;
+}
+
+message AddRestriction {
+  string user_id = 1;
+  string installation_id = 2;
+  string session_id = 3;
+  int64 restrict_to = 4;
+}
+
+message DeleteRestriction {
+  string user_id = 1;
+}

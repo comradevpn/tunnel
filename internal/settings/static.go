@@ -15,12 +15,6 @@ import (
 	"github.com/google/uuid"
 	"github.com/spf13/afero"
 	adminAPI "github.com/vpnhouse/api/go/server/tunnel_admin"
-	"github.com/vpnhouse/tunnel/internal/eventlog"
-	"github.com/vpnhouse/tunnel/internal/extstat"
-	"github.com/vpnhouse/tunnel/internal/grpc"
-	"github.com/vpnhouse/tunnel/internal/iprose"
-	"github.com/vpnhouse/tunnel/internal/proxy"
-	"github.com/vpnhouse/tunnel/internal/wireguard"
 	"github.com/vpnhouse/common-lib-go/human"
 	"github.com/vpnhouse/common-lib-go/ipam"
 	"github.com/vpnhouse/common-lib-go/sentry"
@@ -31,6 +25,11 @@ import (
 	"github.com/vpnhouse/common-lib-go/xhttp"
 	"github.com/vpnhouse/common-lib-go/xnet"
 	"github.com/vpnhouse/common-lib-go/xrand"
+	"github.com/vpnhouse/tunnel/internal/eventlog"
+	"github.com/vpnhouse/tunnel/internal/extstat"
+	"github.com/vpnhouse/tunnel/internal/iprose"
+	"github.com/vpnhouse/tunnel/internal/proxy"
+	"github.com/vpnhouse/tunnel/internal/wireguard"
 	"go.uber.org/zap"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 	"gopkg.in/hlandau/passlib.v1"
@@ -45,6 +44,20 @@ const (
 type NetworkAccessPolicy struct {
 	Access    ipam.NetworkAccess      `yaml:"access"`
 	RateLimit *ipam.RateLimiterConfig `yaml:"rate_limit,omitempty"`
+}
+
+type GRPCConfig struct {
+	// Addr to listen for gRPC connections
+	Addr        string             `yaml:"addr"`
+	TunnelKey   string             `yaml:"tunnel_key,omitempty"`
+	TLSSelfSign *TLSSelfSignConfig `yaml:"tls_self_sign,omitempty"`
+}
+
+type TLSSelfSignConfig struct {
+	AllowedIPs   []string `yaml:"allowed_ips,omitempty"`
+	AllowedNames []string `yaml:"allowed_names,omitempty"`
+	// Storage directory is used to keep load self signed certs
+	Dir string `yaml:"dir,omitempty"`
 }
 
 type Config struct {
@@ -63,7 +76,7 @@ type Config struct {
 	Domain             *xhttp.DomainConfig         `yaml:"domain,omitempty"`
 	AdminAPI           *AdminAPIConfig             `yaml:"admin_api,omitempty"`
 	PublicAPI          *PublicAPIConfig            `yaml:"public_api,omitempty"`
-	GRPC               *grpc.Config                `yaml:"grpc,omitempty"`
+	GRPC               *GRPCConfig                 `yaml:"grpc,omitempty"`
 	Sentry             *sentry.Config              `yaml:"sentry,omitempty"`
 	EventLog           *eventlog.StorageConfig     `yaml:"event_log,omitempty"`
 	ManagementKeystore string                      `yaml:"management_keystore,omitempty" valid:"path"`

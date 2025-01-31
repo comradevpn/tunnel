@@ -405,6 +405,8 @@ github.com/hashicorp/go-version v1.2.0/go.mod h1:fltr4n8CU8Ke44wwGCBoEymUuxUHl09
 github.com/hashicorp/go.net v0.0.1/go.mod h1:hjKkEWcCURg++eb33jQU7oqQcI9XDCnUzHA0oac0k90=
 github.com/hashicorp/golang-lru v0.5.0/go.mod h1:/m3WP610KZHVQ1SGc6re/UDhFvYD7pJ4Ao+sR/qLZy8=
 github.com/hashicorp/golang-lru v0.5.1/go.mod h1:/m3WP610KZHVQ1SGc6re/UDhFvYD7pJ4Ao+sR/qLZy8=
+github.com/hashicorp/golang-lru/v2 v2.0.7 h1:a+bsQ5rvGLjzHuww6tVxozPZFVghXaHOwFs4luLUK2k=
+github.com/hashicorp/golang-lru/v2 v2.0.7/go.mod h1:QeFd9opnmA6QUJc5vARoKUSoFhyfM2/ZepoAG6RGpeM=
 github.com/hashicorp/hcl v1.0.0/go.mod h1:E5yfLk+7swimpb2L/Alb/PJmXilQ/rhwaUYs4T20WEQ=
 github.com/hashicorp/logutils v1.0.0/go.mod h1:QIAnNjmIWmVIIkWDTG1z5v++HQmx9WQRO+LraFDTW64=
 github.com/hashicorp/mdns v1.0.0/go.mod h1:tL+uN++7HEJ6SQLQ2/p+z2pH24WQKWjBPkE0mNTz8vQ=
@@ -820,10 +822,8 @@ github.com/vishvananda/netns v0.0.0-20191106174202-0a2b9b5464df h1:OviZH7qLw/7Zo
 github.com/vishvananda/netns v0.0.0-20191106174202-0a2b9b5464df/go.mod h1:JP3t17pCcGlemwknint6hfoeCVQrEMVwxRLRjXpq+BU=
 github.com/vpnhouse/api v0.0.0-20240916134854-020f48ada450 h1:TyHU1UvTh4DcJb/tp0f2HHgRkYMu6pUR3SGVIOvqlEU=
 github.com/vpnhouse/api v0.0.0-20240916134854-020f48ada450/go.mod h1:qeAZBOFAiz7FiTG49UremjHQExCUPui2tTdn1NMDn1s=
-github.com/vpnhouse/common-lib-go v0.0.0-20241018091937-70e0ca568dfa h1:u02MulscIPuV3hTkKAyBo6duZQGD8p7vxyFuDSQdMWg=
-github.com/vpnhouse/common-lib-go v0.0.0-20241018091937-70e0ca568dfa/go.mod h1:40HWsLKxjT4TzdWRk3nDUeiqAkIDK5mC2VA11yqoHCI=
-github.com/vpnhouse/iprose-go v0.2.0-rc2 h1:PHMKVM1YhE9YKDOr/q4vByVe4Wt+EOOwoZcbjuLQ0pk=
-github.com/vpnhouse/iprose-go v0.2.0-rc2/go.mod h1:YEywsLI+o7qrT7Z2Y90xug+o1wSMqDI9bBwNr2007W8=
+github.com/vpnhouse/common-lib-go v0.0.0-20250131032737-6c42ed381051 h1:pvZtpbz/6N+Kpqj4z7mKRHXI5RP5e1Owi5DPHtUanK0=
+github.com/vpnhouse/common-lib-go v0.0.0-20250131032737-6c42ed381051/go.mod h1:40HWsLKxjT4TzdWRk3nDUeiqAkIDK5mC2VA11yqoHCI=
 github.com/vpnhouse/iprose-go v0.2.0 h1:oB926DvYxf00CMY5fhO8zRPGDtWtDhbvKl5HWbiUP3E=
 github.com/vpnhouse/iprose-go v0.2.0/go.mod h1:YEywsLI+o7qrT7Z2Y90xug+o1wSMqDI9bBwNr2007W8=
 github.com/vultr/govultr/v2 v2.7.1/go.mod h1:BvOhVe6/ZpjwcoL6/unkdQshmbS9VGbowI4QT+3DGVU=
